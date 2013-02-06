@@ -34,7 +34,7 @@ class Item:
     def __init__(self, values={}, **kwargs):
         for k in kwargs.keys():
             values[k] = kwargs[k]
-
+        values = json.loads(values)
         for prop in values.keys():
             if prop == "cache":
                 self.cache = values["cache"]
